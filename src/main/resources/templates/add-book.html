@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<body>
+<form action="#" th:action="@{/books/addbook}" th:object="${bookReqDTO}" method="post">
+    <label for="title">타이틀</label>
+    <input type="text" th:field="*{title}" id="title">
+    <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
+    <br/>
+    <label for="author">작가</label>
+    <input type="text" th:field="*{author}" id="author">
+    <span th:if="${#fields.hasErrors('author')}" th:errors="*{author}"></span>
+    <br/>
+    <label for="isbn">등록번호</label>
+    <input type="text" th:field="*{isbn}" id="isbn">
+    <span th:if="${#fields.hasErrors('isbn')}" th:errors="*{isbn}"></span>
+    <br/>
+    <input type="submit" value="Add User">
+</form>
+</body>
+</html>
